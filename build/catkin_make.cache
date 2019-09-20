@@ -1,0 +1,2 @@
+description
+-DCATKIN_DEVEL_PREFIX=/home/yong_ros/example_ws/devel -DCMAKE_INSTALL_PREFIX=/home/yong_ros/example_ws/install -G Unix Makefiles
