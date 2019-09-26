@@ -1,35 +1,45 @@
 <?xml version="1.0" ?>
 
 <robot name="Asimo_E1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <!-- Constants value-->
+  <xacro:property name="PI" value="3.1415926535897931"/>
+  <!-- color-->
+  <material name="white">
+        <color rgba="1 1 1 1"/>
+  </material>
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
 
-
+  <!-- Link Joint Description-->
   <link name="body">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.5"/>
       <geometry>
         <box size="1 1.5 1"/>
       </geometry>
-      <material name="white">
-        <color rgba="1 1 1 1"/>
-      </material>
+      <material name="white"/>
     </visual>
   </link>
 
   <link name="hip_l">
     <visual>
-      <origin rpy="1.57075 0 1.57075" xyz="0 -0.5 -1.2"/>
+      <origin rpy="${PI/2} 0 ${PI/2}" xyz="0 -0.5 -1.2"/>
       <geometry>
         <cylinder length="0.5" radius="0.2"/>
       </geometry>
+      <material name="red"/>
     </visual>
   </link>
 
   <link name="hip_r">
     <visual>
-      <origin rpy="1.57075 0 1.57075" xyz="0 0.5 -1.2"/>
+      <origin rpy="${PI/2}  0 ${PI/2}" xyz="0 0.5 -1.2"/>
       <geometry>
         <cylinder length="0.5" radius="0.2"/>
       </geometry>
+      <material name="red"/>
     </visual>
   </link>
 
@@ -45,19 +55,21 @@
 
   <link name="lower_hip_r">
     <visual>
-      <origin rpy="1.57075 0 0" xyz="0 0.5 -1.5"/>
+      <origin rpy="${PI/2} 0 0" xyz="0 0.5 -1.5"/>
       <geometry>
         <cylinder length="0.5" radius="0.2"/>
       </geometry>
+      <material name="red"/>
     </visual>
   </link>
 
   <link name="lower_hip_l">
     <visual>
-      <origin rpy="1.57075 0 0" xyz="0 -0.5 -1.5"/>
+      <origin rpy="${PI/2} 0 0" xyz="0 -0.5 -1.5"/>
       <geometry>
         <cylinder length="0.5" radius="0.2"/>
       </geometry>
+      <material name="red"/>
     </visual>
   </link>
 
@@ -74,25 +86,21 @@
 
   <link name="leg_l">
     <visual>
-      <origin rpy="0 0 1.57075" xyz="0 -0.5 -2"/>
+      <origin rpy="0 0 ${PI/2}" xyz="0 -0.5 -2"/>
       <geometry>
         <cylinder length="0.7" radius="0.15"/>
       </geometry>
-      <material name="white">
-        <color rgba="1 1 1 1"/>
-      </material>
+      <material name="white"/>
     </visual>
   </link>
 
   <link name="leg_r">
     <visual>
-      <origin rpy="0 0 1.57075" xyz="0 0.5 -2"/>
+      <origin rpy="0 0 ${PI/2}" xyz="0 0.5 -2"/>
       <geometry>
         <cylinder length="0.7" radius="0.15"/>
       </geometry>
-      <material name="white">
-        <color rgba="1 1 1 1"/>
-      </material>
+      <material name="white"/>
     </visual>
   </link>
 
@@ -108,16 +116,17 @@
 
   <link name="knee_r">
     <visual>
-      <origin rpy="1.57075 0 0" xyz="0 0.5 -2.5"/>
+      <origin rpy="${PI/2} 0 0" xyz="0 0.5 -2.5"/>
       <geometry>
         <cylinder length="0.55" radius="0.2"/>
       </geometry>
+      <material name="red"/>
     </visual>
   </link>
 
   <link name="knee_l">
     <visual>
-      <origin rpy="1.57075 0 0" xyz="0 -0.5 -2.5"/>
+      <origin rpy="${PI/2} 0 0" xyz="0 -0.5 -2.5"/>
       <geometry>
         <cylinder length="0.55" radius="0.2"/>
       </geometry>
@@ -136,25 +145,21 @@
 
   <link name="foot_l">
     <visual>
-      <origin rpy="0 0 1.57075" xyz="0 -0.5 -3"/>
+      <origin rpy="0 0 ${PI/2}" xyz="0 -0.5 -3"/>
       <geometry>
         <cylinder length="0.7" radius="0.15"/>
       </geometry>
-        <material name="white">
-        <color rgba="1 1 1 1"/>
-      </material>
+      <material name="white"/>
     </visual>
   </link>
 
   <link name="foot_r">
     <visual>
-      <origin rpy="0 0 1.57075" xyz="0 0.5 -3"/>
+      <origin rpy="0 0 ${PI/2}" xyz="0 0.5 -3"/>
       <geometry>
         <cylinder length="0.7" radius="0.15"/>
       </geometry>
-        <material name="white">
-        <color rgba="1 1 1 1"/>
-      </material>
+        <material name="white"/>
     </visual>
   </link>
 
@@ -171,19 +176,21 @@
 
   <link name="ankle_l">
     <visual>
-      <origin rpy="1.57075 0 0" xyz="0 -0.5 -3.5"/>
+      <origin rpy="${PI/2} 0 0" xyz="0 -0.5 -3.5"/>
       <geometry>
         <cylinder length="0.5" radius="0.15"/>
       </geometry>
+      <material name="red"/>
     </visual>
   </link>
 
   <link name="ankle_r">
     <visual>
-      <origin rpy="1.57075 0 0" xyz="0 0.5 -3.5"/>
+      <origin rpy="${PI/2} 0 0" xyz="0 0.5 -3.5"/>
       <geometry>
         <cylinder length="0.5" radius="0.15"/>
       </geometry>
+      <material name="red"/>
     </visual>
   </link>
 
@@ -199,19 +206,21 @@
 
   <link name="ankle_lower_l">
     <visual>
-      <origin rpy="1.57075 0 1.57075" xyz="0 -0.5 -3.7"/>
+      <origin rpy="${PI/2} 0 ${PI/2}" xyz="0 -0.5 -3.7"/>
       <geometry>
         <cylinder length="0.55" radius="0.15"/>
       </geometry>
+      <material name="red"/>
     </visual>
   </link>
 
   <link name="ankle_lower_r">
     <visual>
-      <origin rpy="1.57075 0 1.57075" xyz="0 0.5 -3.7"/>
+      <origin rpy="${PI/2} 0 ${PI/2}" xyz="0 0.5 -3.7"/>
       <geometry>
         <cylinder length="0.55" radius="0.15"/>
       </geometry>
+      <material name="red"/>
     </visual>
   </link>
 
@@ -227,25 +236,21 @@
 
   <link name="toe_r">
     <visual>
-      <origin rpy="1.57075 0 1.57075" xyz="0.1 0.5 -3.9"/>
+      <origin rpy="${PI/2} 0 ${PI/2}" xyz="0.1 0.5 -3.9"/>
       <geometry>
         <box size="0.6 0.2 0.9"/>
       </geometry>
-        <material name="white">
-        <color rgba="1 1 1 1"/>
-      </material>
+        <material name="white"/>
     </visual>
   </link>
 
   <link name="toe_l">
     <visual>
-      <origin rpy="1.57075 0 1.57075" xyz="0.1 -0.5 -3.9"/>
+      <origin rpy="${PI/2} 0 ${PI/2}" xyz="0.1 -0.5 -3.9"/>
       <geometry>
         <box size="0.6 0.2 0.9"/>
       </geometry>
-        <material name="white">
-        <color rgba="1 1 1 1"/>
-      </material>
+        <material name="white"/>
     </visual>
   </link>
 
@@ -258,7 +263,5 @@
     <parent link="ankle_lower_r"/>
     <child link="toe_r"/>
   </joint>
-
-
 
 </robot>
