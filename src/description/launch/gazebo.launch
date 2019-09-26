@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+	</include>
+
+	<param name="robot_description" textfile="$(find description)/urdf/gazebo.urdf"/>
+	
+	<node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" respawn="false"
+		args="-urdf -model myoboat -param robot_description -z 1">
+	</node>
+
+	
+
+</launch>

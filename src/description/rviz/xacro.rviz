@@ -6,26 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Grid1
-        - /RobotModel1/Links1
-        - /RobotModel1/Links1/ankle_l1
-        - /RobotModel1/Links1/ankle_lower_l1
-        - /RobotModel1/Links1/ankle_lower_r1
-        - /RobotModel1/Links1/ankle_r1
-        - /RobotModel1/Links1/body1
-        - /RobotModel1/Links1/foot_l1
-        - /RobotModel1/Links1/foot_r1
-        - /RobotModel1/Links1/hip_l1
-        - /RobotModel1/Links1/hip_r1
-        - /RobotModel1/Links1/knee_l1
-        - /RobotModel1/Links1/knee_r1
-        - /RobotModel1/Links1/leg_l1
-        - /RobotModel1/Links1/leg_r1
-        - /RobotModel1/Links1/lower_hip_l1
-        - /RobotModel1/Links1/lower_hip_r1
-        - /RobotModel1/Links1/toe_l1
-        - /RobotModel1/Links1/toe_r1
-        - /Axes1
+        - /RobotModel1
+        - /TF1
+        - /TF1/Tree1/body1/hip_l1/lower_hip_l1
       Splitter Ratio: 0.5
     Tree Height: 416
   - Class: rviz/Selection
@@ -79,12 +62,12 @@ Visualization Manager:
       Links:
         All Links Enabled: true
         Expand Joint Details: false
-        Expand Link Details: true
+        Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
         ankle_l:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
           Show Trail: false
           Value: true
         ankle_lower_l:
@@ -164,7 +147,7 @@ Visualization Manager:
           Value: true
         toe_r:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
           Show Trail: false
           Value: true
       Name: RobotModel
@@ -173,12 +156,71 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
-    - Class: rviz/Axes
+    - Class: rviz/TF
       Enabled: true
-      Length: 1
-      Name: Axes
-      Radius: 0.10000000149011612
-      Reference Frame: <Fixed Frame>
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        ankle_l:
+          Value: true
+        ankle_lower_l:
+          Value: true
+        ankle_lower_r:
+          Value: true
+        ankle_r:
+          Value: true
+        body:
+          Value: true
+        foot_l:
+          Value: true
+        foot_r:
+          Value: true
+        hip_l:
+          Value: true
+        hip_r:
+          Value: true
+        knee_l:
+          Value: true
+        knee_r:
+          Value: true
+        leg_l:
+          Value: true
+        leg_r:
+          Value: true
+        lower_hip_l:
+          Value: true
+        lower_hip_r:
+          Value: true
+        toe_l:
+          Value: true
+        toe_r:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        body:
+          hip_l:
+            lower_hip_l:
+              leg_l:
+                knee_l:
+                  foot_l:
+                    ankle_l:
+                      ankle_lower_l:
+                        toe_l:
+                          {}
+          hip_r:
+            lower_hip_r:
+              leg_r:
+                knee_r:
+                  foot_r:
+                    ankle_r:
+                      ankle_lower_r:
+                        toe_r:
+                          {}
+      Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
@@ -208,25 +250,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 23.120311737060547
+      Distance: 5.36472225189209
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.17230214178562164
-        Y: 0.21572250127792358
-        Z: -2.6583609580993652
+        X: 0.9021437168121338
+        Y: -0.11763770133256912
+        Z: -0.20391491055488586
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.24539877474308014
+      Pitch: 0.2603982388973236
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.058572769165039
+      Yaw: 0.11040326207876205
     Saved: ~
 Window Geometry:
   Displays:

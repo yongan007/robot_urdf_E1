@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding= "UTF-8" ?>
 
-<robot name="E1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="Asimo_E1" xmlns:xacro="http://www.ros.org/wiki/xacro">
   
 <link name="body">
   <visual>
@@ -12,6 +12,16 @@
       <color rgba="1 1 1 1"/>
     </material>
   </visual>
+
+  <collision>
+      <geometry>
+          <box size="1 1.5 1"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <link name="hip_l">
@@ -21,6 +31,17 @@
       <cylinder length="0.5" radius="0.2"/>
     </geometry>
   </visual>
+
+  <collision>
+        <geometry>
+            <cylinder length="0.5" radius="0.2"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="1.0" />
+        <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
+
 </link>
 
 <link name="hip_r">
@@ -30,6 +51,15 @@
       <cylinder length="0.5" radius="0.2"/>
     </geometry>
   </visual>
+  <collision>
+        <geometry>
+            <cylinder length="0.5" radius="0.2"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="1.0" />
+        <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
 </link>
 
 <joint name="body_hip_l" type="fixed">
@@ -42,6 +72,7 @@
   <child link="hip_r"/>
 </joint>
 
+
 <link name="lower_hip_r">
   <visual>
     <origin rpy="1.57075 0 0" xyz="0 0.5 2.4"/>
@@ -49,6 +80,16 @@
       <cylinder length="0.5" radius="0.2"/>
     </geometry>
   </visual>
+
+  <collision>
+        <geometry>
+            <cylinder length="0.5" radius="0.2"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="1.0" />
+        <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+    </inertial>
 </link>
 
 <link name="lower_hip_l">
@@ -58,6 +99,16 @@
       <cylinder length="0.5" radius="0.2"/>
     </geometry>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
+
 </link>
 
 <joint name="hip_to_lower_hip_r" type="fixed">
@@ -81,6 +132,15 @@
       <color rgba="1 1 1 1"/>
     </material>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <link name="leg_r">
@@ -93,6 +153,15 @@
       <color rgba="1 1 1 1"/>
     </material>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <joint name="lower_hip_to_leg_l" type="fixed">
@@ -112,6 +181,15 @@
       <cylinder length="0.55" radius="0.2"/>
     </geometry>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <link name="knee_l">
@@ -121,6 +199,15 @@
       <cylinder length="0.55" radius="0.2"/>
     </geometry>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <joint name="leg_to_knee_r" type="fixed">
@@ -143,6 +230,15 @@
       <color rgba="1 1 1 1"/>
     </material>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <link name="foot_r">
@@ -155,6 +251,15 @@
       <color rgba="1 1 1 1"/>
     </material>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <joint name="knee_to_foot_r" type="fixed">
@@ -175,6 +280,15 @@
       <cylinder length="0.5" radius="0.15"/>
     </geometry>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <link name="ankle_r">
@@ -184,6 +298,15 @@
       <cylinder length="0.5" radius="0.15"/>
     </geometry>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <joint name="foot_to_ankle_r" type="fixed">
@@ -203,6 +326,15 @@
       <cylinder length="0.55" radius="0.15"/>
     </geometry>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <link name="ankle_lower_r">
@@ -212,6 +344,15 @@
       <cylinder length="0.55" radius="0.15"/>
     </geometry>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <joint name="ankle_to_ankle_lower_r" type="fixed">
@@ -234,6 +375,15 @@
       <color rgba="1 1 1 1"/>
     </material>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <link name="toe_l">
@@ -246,6 +396,15 @@
       <color rgba="1 1 1 1"/>
     </material>
   </visual>
+  <collision>
+      <geometry>
+          <cylinder length="0.5" radius="0.2"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.0741666666667" ixy="0.0" ixz="0.0" iyy="0.0585416666667" iyz="0.0" izz="0.0260416666667"/>
+  </inertial>
 </link>
 
 <joint name="ankle_lower_to_toe_l" type="fixed">
@@ -257,7 +416,5 @@
   <parent link="ankle_lower_r"/>
   <child link="toe_r"/>
 </joint>
-
-
 
 </robot>
