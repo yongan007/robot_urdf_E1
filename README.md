@@ -5,15 +5,15 @@ Package Name: asimo_e1_description
 ## Quick Start
 To run robot in rviz with xacro: 
 	
-	roslaunch description xacro.launch 
+	roslaunch asimo_e1_description xacro.launch 
 
 To run robot in rviz with urdf: 
 	
-	roslaunch description urdf.launch
+	roslaunch asimo_e1_description urdf.launch
 
 To run robot in Gazebo: 
 	
-	roslaunch description gazebo.launch
+	roslaunch asimo_e1_description gazebo.launch
 
 
 ## Robot display with Rviz 
