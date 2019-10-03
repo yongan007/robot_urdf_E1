@@ -1,8 +1,0 @@
-prefix=/home/yong_ros/example_ws/devel
-
-Name: description
-Description: Description of description
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/yong_ros/example_ws/devel/lib 
-Requires: 

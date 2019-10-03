@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+
+<launch>
+<!-- Parsing xacro and loading robot_description parameter -->
+  <arg name="model" default="$(find asimo_e1_description)/urdf/robot.urdf"/>
+ 
+ <!-- Setting gui parameter to true for display joint slider, for getting joint control -->
+  <arg name="gui" default="true" />
+
+
+  <arg name="rvizconfig" default="$(find asimo_e1_description)/rviz/robot.rviz" />
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+  <param name="use_gui" value="$(arg gui)"/>
+<!-- Starting Joint state publisher node which will publish the joint
+values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+</launch>
