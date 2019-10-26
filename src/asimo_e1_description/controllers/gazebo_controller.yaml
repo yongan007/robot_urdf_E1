@@ -1,0 +1,57 @@
+Asimo_E1:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 250  
+
+  # Position Controllers ---------------------------------------
+  joint1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: body_hip_l
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: body_hip_r
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: hip_to_lower_hip_r
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: hip_to_lower_hip_l
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  
+  joint5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: leg_to_knee_r
+    pid: {p: 5.0, i: 0.01, d: 30.0}
+  joint6_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: leg_to_knee_l
+    pid: {p: 5.0, i: 0.01, d: 30.0}
+
+  joint7_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: foot_to_ankle_r
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint8_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: foot_to_ankle_l
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint9_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: ankle_to_ankle_lower_r
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint10_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: ankle_to_ankle_lower_l
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+
+
+

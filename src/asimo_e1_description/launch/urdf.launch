@@ -3,7 +3,7 @@
 
 <launch>
 <!-- Parsing xacro and loading robot_description parameter -->
-  <arg name="model" default="$(find asimo_e1_description)/urdf/robot.urdf"/>
+  <arg name="model" default="$(find asimo_e1_description)/urdf/robot_move.urdf"/>
  
  <!-- Setting gui parameter to true for display joint slider, for getting joint control -->
   <arg name="gui" default="true" />

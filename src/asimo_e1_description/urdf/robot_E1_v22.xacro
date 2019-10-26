@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<robot name="Asimo_E1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+ <!-- Start - Include -->
+  
+  <xacro:include filename="$(find asimo_e1_description)/urdf/links_joints.xacro"/>
+
+<!-- Start - Include -->
+  <!-- Constants value-->
+<xacro:property name="PI" value="3.1415926535897931"/>
+<!-- <xacro:property name="M1" value="0.1"/>    
+<xacro:property name="M2" value="0.5"/>      -->
+        
+                
+                
+<link_box name="body"
+              origin_rpy="0 0 0" origin_xyz="0 0 3.4"
+              mass="0.1"
+              ixx="170.667" ixy="0" ixz="0"
+              iyy="170.667" iyz="0"
+              izz="170.667"
+              size="1 1.5 1" 
+              color = 'white' />
+
+
+  <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/Asimo_E1</robotNamespace> 
+      </plugin>
+  </gazebo>
+
+</robot>
