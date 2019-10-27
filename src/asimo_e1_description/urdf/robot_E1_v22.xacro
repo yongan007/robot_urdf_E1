@@ -9,20 +9,259 @@
 <!-- Start - Include -->
   <!-- Constants value-->
 <xacro:property name="PI" value="3.1415926535897931"/>
-<!-- <xacro:property name="M1" value="0.1"/>    
-<xacro:property name="M2" value="0.5"/>      -->
+<xacro:property name="M1" value="0.01"/>    
+<xacro:property name="M2" value="0.05"/>     
         
                 
                 
 <link_box name="body"
               origin_rpy="0 0 0" origin_xyz="0 0 3.4"
-              mass="0.1"
+              mass="0.001"
               ixx="170.667" ixy="0" ixz="0"
               iyy="170.667" iyz="0"
               izz="170.667"
               size="1 1.5 1" 
               color = 'white' />
 
+ <link_cylinder name="hip_l"
+              origin_rpy="${PI/2}  0 ${PI/2}" origin_xyz="0 0 0"
+              mass="${M2}"
+              ixx="12.679" ixy="0" ixz="0"
+              iyy="12.679" iyz="0"
+              izz="0.651"
+              color = 'red'
+              radius="0.2" length="0.5" />
+
+
+  <link_cylinder name="hip_r"
+              origin_rpy="${PI/2}  0 ${PI/2}" origin_xyz="0 0 0"
+              mass="${M1}"
+              ixx="12.679" ixy="0" ixz="0"
+              iyy="12.679" iyz="0"
+              izz="0.651"
+              color = 'white'
+              radius="0.2" length="0.5" />
+  
+                
+   <rot_joint name="body_hip_l" type="revolute"
+           axis_xyz="1 0 0"
+           origin_rpy="0 0 0" origin_xyz="0 -0.5 2.7"
+           parent="body" child="hip_l"
+           limit_e="1000" limit_l="-${PI/6}" limit_u="${PI/6}" limit_v="0.5" />
+
+   <rot_joint name="body_hip_r" type="revolute"
+           axis_xyz="1 0 0"
+           origin_rpy="0 0 0" origin_xyz="0 0.5 2.7"
+           parent="body" child="hip_r"
+           limit_e="1000" limit_l="-${PI/6} " limit_u="${PI/6}" limit_v="0.5" />
+
+           
+  <link_cylinder name="lower_hip_r"
+              origin_rpy="${PI/2}  0 0" origin_xyz="0 0 0"
+              mass="${M1}"
+              ixx="12.679" ixy="0" ixz="0"
+              iyy="12.679" iyz="0"
+              izz="0.651"
+              color = 'white'
+              radius="0.2" length="0.5" />
+  
+   <link_cylinder name="lower_hip_l"
+              origin_rpy="${PI/2}  0 0" origin_xyz="0 0 0"
+              mass="${M1}"
+              ixx="12.679" ixy="0" ixz="0"
+              iyy="12.679" iyz="0"
+              izz="0.651"
+              color = 'white'
+              radius="0.2" length="0.5" />
+
+  <rot_joint name="hip_to_lower_hip_r" type="revolute"
+           axis_xyz="0 1 0"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.2"
+           parent="hip_r" child="lower_hip_r"
+           limit_e="1000" limit_l="-${PI/3}" limit_u="${PI/6}" limit_v="0.5" />
+
+  <rot_joint name="hip_to_lower_hip_l" type="revolute"
+           axis_xyz="0 1 0"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.2"
+           parent="hip_l" child="lower_hip_l"
+           limit_e="1000" limit_l="-${PI/3}" limit_u="${PI/3}" limit_v="0.5" />
+
+  <link_cylinder name="leg_l"
+              origin_rpy="0 0 ${PI/2}" origin_xyz="0 0 0"
+              mass="${M1}"
+              ixx="12.679" ixy="0" ixz="0"
+              iyy="12.679" iyz="0"
+              izz="0.651"
+              color = 'white'
+              radius="0.15" length="0.7" />
+
+  <link_cylinder name="leg_r"
+              origin_rpy="0 0 ${PI/2}" origin_xyz="0 0 0"
+              mass="${M1}"
+              ixx="12.679" ixy="0" ixz="0"
+              iyy="12.679" iyz="0"
+              izz="0.651"
+              color = 'white'
+              radius="0.15" length="0.7" />
+
+  <fixed_joint name="lower_hip_to_leg_l" type="fixed"
+           axis_xyz="0 0 1"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.35"
+           parent="lower_hip_l" child="leg_l"/>
+
+  <fixed_joint name="lower_hip_to_leg_r" type="fixed"
+           axis_xyz="0 0 1"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.35"
+           parent="lower_hip_r" child="leg_r" />
+
+
+  <link_cylinder name="knee_r"
+              origin_rpy="${PI/2}  0 0" origin_xyz="0 0 0"
+              mass="${M1}"
+              ixx="12.679" ixy="0" ixz="0"
+              iyy="12.679" iyz="0"
+              izz="0.651"
+              color = 'white'
+              radius="0.2" length="0.4" />
+
+  <rot_joint name="leg_to_knee_r" type="revolute"
+           axis_xyz="0 1 0"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.5"
+           parent="leg_r" child="knee_r"
+           limit_e="2000" limit_l="0" limit_u="${PI/4}" limit_v="0.5" />
+
+  <link_cylinder name="knee_l"
+              origin_rpy="${PI/2}  0 0" origin_xyz="0 0 0"
+              mass="${M1}"
+              ixx="12.679" ixy="0" ixz="0"
+              iyy="12.679" iyz="0"
+              izz="0.651"
+              color = 'white'
+              radius="0.2" length="0.4" />
+
+  <rot_joint name="leg_to_knee_l" type="revolute"
+           axis_xyz="0 1 0"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.5"
+           parent="leg_l" child="knee_l"
+           limit_e="2000" limit_l="0" limit_u="${PI/4}" limit_v="0.5" />
+
+
+  <link_cylinder name="foot_l"
+              origin_rpy="0 0 ${PI/2}" origin_xyz="0 0 0"
+              mass="${M1}"
+              ixx="12.679" ixy="0" ixz="0"
+              iyy="12.679" iyz="0"
+              izz="0.651"
+              color = 'white'
+              radius="0.15" length="0.7" />
+
+  <fixed_joint name="knee_to_foot_l" type="fixed"
+           axis_xyz="0 0 1"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.5"
+           parent="knee_l" child="foot_l" />
+
+   <link_cylinder name="foot_r"
+              origin_rpy="0 0 ${PI/2}" origin_xyz="0 0 0"
+              mass="${M1}"
+              ixx="12.679" ixy="0" ixz="0"
+              iyy="12.679" iyz="0"
+              izz="0.651"
+              color = 'white'
+              radius="0.15" length="0.7" />
+
+  <fixed_joint name="knee_to_foot_r" type="fixed"
+           axis_xyz="0 0 1"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.5"
+           parent="knee_r" child="foot_r" />
+
+
+  <link_cylinder name="ankle_r"
+              origin_rpy="${PI/2}  0 0" origin_xyz="0 0 0"
+              mass="${M1}"
+              ixx="12.679" ixy="0" ixz="0"
+              iyy="12.679" iyz="0"
+              izz="0.651"
+              color = 'white'
+              radius="0.15" length="0.5" />
+
+  <rot_joint name="foot_to_ankle_r" type="revolute"
+           axis_xyz="0 1 0"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.5"
+           parent="foot_r" child="ankle_r"
+           limit_e="10000" limit_l="-${PI/4}" limit_u="${PI/24}" limit_v="0.5" />
+
+  <link_cylinder name="ankle_l"
+            origin_rpy="${PI/2}  0 0" origin_xyz="0 0 0"
+            mass="${M1}"
+            ixx="12.679" ixy="0" ixz="0"
+            iyy="12.679" iyz="0"
+            izz="0.651"
+            color = 'white'
+            radius="0.15" length="0.5" />
+
+  <rot_joint name="foot_to_ankle_l" type="revolute"
+           axis_xyz="0 1 0"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.5"
+           parent="foot_l" child="ankle_l"
+           limit_e="10000" limit_l="-${PI/4}" limit_u="${PI/24}" limit_v="0.5" />
+
+  <link_cylinder name="ankle_lower_r"
+          origin_rpy="${PI/2}  0 ${PI/2}" origin_xyz="0 0 0"
+          mass="${M1}"
+          ixx="12.679" ixy="0" ixz="0"
+          iyy="12.679" iyz="0"
+          izz="0.651"
+          color = 'white'
+          radius="0.15" length="0.5" />
+
+  <rot_joint name="ankle_to_ankle_lower_r" type="revolute"
+           axis_xyz="0 1 0"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.1"
+           parent="ankle_r" child="ankle_lower_r"
+           limit_e="10000" limit_l="-${PI/12}" limit_u="${PI/24}" limit_v="0.5" />
+
+  <link_cylinder name="ankle_lower_l"
+          origin_rpy="${PI/2}  0 ${PI/2}" origin_xyz="0 0 0"
+          mass="${M1}"
+          ixx="12.679" ixy="0" ixz="0"
+          iyy="12.679" iyz="0"
+          izz="0.651"
+          color = 'white'
+          radius="0.15" length="0.5" />
+
+  <rot_joint name="ankle_to_ankle_lower_l" type="revolute"
+           axis_xyz="0 1 0"
+           origin_rpy="0 0 0" origin_xyz="0 0 -0.1"
+           parent="ankle_l" child="ankle_lower_l"
+           limit_e="10000" limit_l="-${PI/12}" limit_u="${PI/24}" limit_v="0.5" />
+
+  <link_box name="toe_r"
+              origin_rpy="${PI/2} 0 ${PI/2}" origin_xyz="0 0 0"
+              mass="1024"
+              ixx="170.667" ixy="0" ixz="0"
+              iyy="170.667" iyz="0"
+              izz="170.667"
+              color = 'white'
+              size="0.6 0.2 0.9" />
+
+  <fixed_joint name="ankle_lower_to_toe_r" type="fixed"
+          axis_xyz="0 1 0"
+          origin_rpy="0 0 0" origin_xyz="0 0 -0.2"
+          parent="ankle_lower_r" child="toe_r"/>
+
+  <link_box name="toe_l"
+              origin_rpy="${PI/2} 0 ${PI/2}" origin_xyz="0 0 0"
+              mass="1024"
+              ixx="170.667" ixy="0" ixz="0"
+              iyy="170.667" iyz="0"
+              izz="170.667"
+              color = 'white'
+              size="0.6 0.2 0.9" />
+
+  <fixed_joint name="ankle_lower_to_toe_l" type="fixed"
+          axis_xyz="0 1 0"
+          origin_rpy="0 0 0" origin_xyz="0 0 -0.2"
+          parent="ankle_lower_l" child="toe_l" />
 
   <gazebo>
       <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">

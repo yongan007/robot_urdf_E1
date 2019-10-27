@@ -8,18 +8,34 @@ def talker():
     
     rospy.init_node('talker', anonymous=True)
 
-    pub1 = rospy.Publisher('/Asimo_E1/joint3_position_controller/command', Float64, queue_size=10)
+    pub3 = rospy.Publisher('/Asimo_E1/joint3_position_controller/command', Float64, queue_size=10)
+    pub4 = rospy.Publisher('/Asimo_E1/joint4_position_controller/command', Float64, queue_size=10)
     
-    pub2 = rospy.Publisher('/Asimo_E1/joint4_position_controller/command', Float64, queue_size=10)
+    pub5 = rospy.Publisher('/Asimo_E1/joint5_position_controller/command', Float64, queue_size=10)
+    pub6 = rospy.Publisher('/Asimo_E1/joint6_position_controller/command', Float64, queue_size=10)
+    
+    pub7 = rospy.Publisher('/Asimo_E1/joint8_position_controller/command', Float64, queue_size=10)
+    pub8 = rospy.Publisher('/Asimo_E1/joint9_position_controller/command', Float64, queue_size=10)
     
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
-        #hello_str = "hello world %s" % rospy.get_time()
-        position = 0.0 #math.pi/3
+     
+        position = -math.pi/6+math.pi/12
+        position1 = math.pi/6
+        position2 = -math.pi/12
+
         rospy.loginfo(position)
-        pub1.publish(position)
-        pub2.publish(position)
-        print("pub1:",pub1)
+        
+        pub3.publish(position)
+        pub4.publish(position)
+        rate.sleep()
+        pub5.publish(position1)
+        pub6.publish(position1)
+
+        pub7.publish(position2)
+        pub8.publish(position2)
+
+
         rate.sleep()
 
 if __name__ == '__main__':
