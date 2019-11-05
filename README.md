@@ -12,6 +12,11 @@ To run control of robot:
 
 	rosrun asimo_control main.py 
 
+To launch robot without enable control in Gazebo: 
+	
+	roslaunch asimo_e1_description gazebo.launch 
+
+
 ## Robot display with Rviz 
 ![](rviz_view.png)
 
