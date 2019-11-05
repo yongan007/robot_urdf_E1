@@ -18,5 +18,6 @@ To run control of robot:
 
 [![Watch the video]](https://youtu.be/IKFGcrc6w74)
 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/IKFGcrc6w74/0.jpg)](http://www.youtube.com/watch?v=IKFGcrc6w74)
 
 Created with ROS melodic 
