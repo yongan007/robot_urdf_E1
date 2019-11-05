@@ -4,8 +4,7 @@
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
 	</include>
 
-	<param name="robot_description" textfile="$(find asimo_e1_description)/urdf/gazebo_gaz.urdf"/>
-	
+	  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find asimo_e1_description)/urdf/robot_E1_v2.xacro'" />
 	<node 
 			name="spawn_robot" 
 			pkg="gazebo_ros" 
@@ -15,11 +14,6 @@
 	</node>
 
 
-	<rosparam command="load" file="$(find asimo_e1_description)/controllers/gazebo_controller.yaml"/>
 	
-	<node name="contoller_spawner"  pkg="controller_manager"  type="spawner"  respawn="false"
-    	output="screen"  ns="/Asimo_E1"        
-            args="joint1_position_controller joint2_position_controller" />
-
 
 </launch>

@@ -2,3 +2,7 @@ build/
 devel/
 .catkin_workspace
 .vscode
+
+.launch1
+.xacro1
+.urdf1

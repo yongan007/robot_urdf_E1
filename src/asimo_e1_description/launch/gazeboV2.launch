@@ -6,8 +6,7 @@
 
   <!-- Robot model -->
         <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find asimo_e1_description)/urdf/robot_E1_v2.xacro'" />
-		<!-- <arg name="x" default="0"/>  <arg name="y" default="0"/>   <arg name="z" default="2"/> -->
-
+		
 
 	<node 
 			name="spawn_robot" 
