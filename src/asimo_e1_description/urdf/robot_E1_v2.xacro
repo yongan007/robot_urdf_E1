@@ -31,7 +31,7 @@
 
 <fixed_joint name="hokuyo_joint" type="fixed"
                 axis_xyz="0 1 0"
-                origin_rpy="0 0 0" origin_xyz="0.5 0 4"
+                origin_rpy="0 0 0" origin_xyz="0.5 0 3.9"
                 parent="body" child="hokuyo"/>
 
 <!-- <link name="dummy">
@@ -48,7 +48,7 @@
               iyy="170.667" iyz="0"
               izz="170.667"
               size="1 1.5 1" 
-              color = 'white' />
+              color = 'orange' />
 
  <link_cylinder name="hip_l"
               origin_rpy="${PI/2}  0 ${PI/2}" origin_xyz="0 0 0"

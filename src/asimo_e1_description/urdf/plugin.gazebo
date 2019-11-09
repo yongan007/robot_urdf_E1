@@ -8,6 +8,29 @@
       </plugin>
   </gazebo>
 
+
+<!-- define color in model -->
+
+  <gazebo reference="body">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="toe_r">
+    <material>Gazebo/Brown</material>
+  </gazebo>
+
+  <gazebo reference="toe_l">
+    <material>Gazebo/Brown</material>
+  </gazebo>
+
+  <gazebo reference="knee_l">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+    <gazebo reference="knee_r">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+
 <!-- Camera -->
    <gazebo reference="camera">
     <material>Gazebo/Green</material>
@@ -47,6 +70,7 @@
 
     <!-- hokuyo -->
   <gazebo reference="hokuyo">
+  <material>Gazebo/Blue</material>
     <sensor type="gpu_ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>
@@ -61,7 +85,7 @@
           </horizontal>
         </scan>
         <range>
-          <min>15</min>
+          <min>1</min>
           <max>30.0</max>
           <resolution>0.01</resolution>
         </range>
