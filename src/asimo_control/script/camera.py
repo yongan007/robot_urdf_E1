@@ -1,12 +1,6 @@
-#! /usr/bin/python
-# Copyright (c) 2015, Rethink Robotics, Inc.
 
-# Using this CvBridge Tutorial for converting
-# ROS images to OpenCV2 images
-# http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython
+#Modified from: https://gist.github.com/rethink-imcmahon/77a1a4d5506258f3dc1f
 
-# Using this OpenCV2 tutorial for saving Images:
-# http://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_gui/py_image_display/py_image_display.html
 
 # rospy for the subscriber
 import rospy
@@ -34,7 +28,7 @@ def image_callback(msg):
 def main():
     rospy.init_node('image_listener')
     # Define your image topic
-    image_topic = "/asimo/camera1/image_raw"
+    image_topic = "/cameras/left_hand_camera/image"
     # Set up your subscriber and define its callback
     rospy.Subscriber(image_topic, Image, image_callback)
     # Spin until ctrl + c
