@@ -9,10 +9,31 @@
 <!-- Start - Include -->
   <!-- Constants value-->
 <xacro:property name="PI" value="3.1415926535897931"/>
-<xacro:property name="M1" value="0.1"/>    
+<xacro:property name="M1" value="0.15"/>    
 <xacro:property name="M2" value="0.5"/>     
-        
-                
+
+<xacro:property name="cameraSize" value="0.1"/>
+<xacro:property name="cameraMass" value="0.01"/>      
+
+
+<link_box name="camera"
+              origin_rpy="0 0 0" origin_xyz="0 0 0"
+              mass="${cameraMass}"
+              ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"
+              size="${cameraSize} ${cameraSize} ${cameraSize}" 
+              color = 'red' />
+
+<fixed_joint name="camera_joint" type="fixed"
+                axis_xyz="0 1 0"
+                origin_rpy="0 0 0" origin_xyz="0.5 0 3.4"
+                parent="body" child="camera"/>
+
+<!-- <link name="dummy">
+   </link>
+  <joint name="dummy_joint" type="fixed">
+     <parent link="dummy"/>
+     <child link="body"/>
+   </joint> -->
                 
 <link_box name="body"
               origin_rpy="0 0 0" origin_xyz="0 0 3.4"
@@ -263,10 +284,45 @@
           origin_rpy="0 0 0" origin_xyz="0 0 -0.2"
           parent="ankle_lower_l" child="toe_l" />
 
+<!-- Gazebo plugin -->
   <gazebo>
       <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
         <robotNamespace>/Asimo_E1</robotNamespace> 
       </plugin>
+  </gazebo>
+
+<!-- Camera -->
+   <gazebo reference="camera">
+    <material>Gazebo/Green</material>
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>asimo/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
   </gazebo>
 
 </robot>
