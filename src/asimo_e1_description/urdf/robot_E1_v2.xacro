@@ -264,7 +264,7 @@
 
   <link_box name="toe_r"
               origin_rpy="${PI/2} 0 ${PI/2}" origin_xyz="0 0 0"
-              mass="1024"
+              mass="0.1"
               ixx="170.667" ixy="0" ixz="0"
               iyy="170.667" iyz="0"
               izz="170.667"
@@ -278,7 +278,7 @@
 
   <link_box name="toe_l"
               origin_rpy="${PI/2} 0 ${PI/2}" origin_xyz="0 0 0"
-              mass="1024"
+              mass="0.1"
               ixx="170.667" ixy="0" ixz="0"
               iyy="170.667" iyz="0"
               izz="170.667"

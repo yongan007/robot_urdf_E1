@@ -9,13 +9,13 @@
         <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find asimo_e1_description)/urdf/robot_E1_v2.xacro'" />
 		
 
-	<node 
+	<!-- <node 
 			name="spawn_robot" 
 			pkg="gazebo_ros" 
 			type="spawn_model" 
 			respawn="false"
 			args="-urdf -model myoboat -param robot_description -z 1">
-	</node>
+	</node> -->
 
 
 	<rosparam command="load" file="$(find asimo_e1_description)/controllers/gazebo_controller.yaml"/>
@@ -37,8 +37,8 @@
 
 
 
-
-			
+<node name="talker" pkg="asimo_control" type="control.py" />
+	
 
 
 </launch>
