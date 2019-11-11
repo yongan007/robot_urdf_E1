@@ -1,14 +1,18 @@
 ## ROS control of Robot Asimo E1
 
-Package Name: asimo_e1_description 
+Package Name: asimo_e1_description
+
+filse location:
+ 
+sensor script: /asimo_control/script/camera.py
+
+images : /src/asimo_e1_description/Photos
 
 ## Quick Start
 
 To launch robot in Gazebo: 
 	
 	roslaunch asimo_e1_description gazeboV2.launch
-
-
 
 ## Video 
 
