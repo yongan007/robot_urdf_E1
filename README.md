@@ -10,9 +10,7 @@ To launch robot in Gazebo:
 
 
 
-## Robot display with Rviz 
-![](rviz_view.png)
-
+## Video 
 
 [![Watch the video]](https://www.youtube.com/watch?v=D0a5ea_kOAI)
 
