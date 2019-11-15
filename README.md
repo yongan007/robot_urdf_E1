@@ -1,18 +1,31 @@
-## ROS control of Robot Asimo E1
+## ROS test
 
-Package Name: asimo_e1_description
+# unitest
+This unitest is for check about correctness of a forward kinematics script.
 
-filse location:
+filename : fk.py
+
+tester: fk_test.py
  
-sensor script: /asimo_control/script/camera.py
+To run unintest: 
 
-images : /src/asimo_e1_description/Photos
+	rosrun rostest fk_test.py
 
-## Quick Start
+## Integration test
 
-To launch robot in Gazebo: 
+This is intergration test show if robot get right angle from control publisher. So I created a subscriber to read the joint state. After that we can compare the angle from publisher with subscriber.
+
+To check angle from subscriber:
 	
-	roslaunch asimo_e1_description gazeboV2.launch
+	rosrun asimo_control control.py
+
+To check angle from publisher:
+	
+	rosrun asimo joint_state_subscriber.py
+
+To run integration test: 
+	
+	rosrun rostest joint_integration_test.py
 
 ## Video 
 

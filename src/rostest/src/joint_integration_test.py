@@ -20,8 +20,6 @@ def listener():
     rospy.init_node('joint_state_sub', anonymous=True)
     rospy.Subscriber("/Asimo_E1/joint8_position_controller/state", JointControllerState, callback)
     #rospy.spin()
- 
-
 
 class JointStateCase(unittest.TestCase):
 
@@ -30,12 +28,10 @@ class JointStateCase(unittest.TestCase):
 
             #i don't have time so i just give the value 
             joint_command = -0.26 # pub8 = rospy.Publisher('/Asimo_E1/joint8_position_controller/command')
-            
             joint_value = callback # angle from call back 
 
             assert joint_command != joint_value, "The joint_command is not equal to joint_value."
 
 if __name__ == "__main__":
-    
     listener()
     rostest.rosrun('mytest', 'test_code', JointStateCase)

@@ -13,11 +13,13 @@ class MyTestCase(unittest.TestCase):
         #self.assertEqual((a).all,(b).all), "work work"
         assert (calculation1).all != 0,"List is empty."
         assert (calculation1).all != (expected1).all, "The answer is incorrect."
-
     def edge_fkassert(self): 
         cal2 = fk.fk_3link(0,0,0)
         exp2 = np.array([0, 1.0, 0, 0.35, 0, 0, 1.0, 0, 1.0, 0, 0, 2.0, 0, 0, 0, 1.0])
         assert (cal2).all != (exp2).all, "The answer is incorrect."
+    def negative_fk(self):
+        cal3 = fk.fk_3link(-pi,0.5,pi/2)
+        assert (cal2).all == 0, "The equation is incorrect."
 
 if __name__ == "__main__":
     rostest.rosrun('mytest', 'test_code', MyTestCase)
