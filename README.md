@@ -15,22 +15,23 @@ To run unintest:
 
 This is intergration test show if robot get right angle from control publisher. So I created a subscriber to read the joint state. After that we can compare the angle from publisher with subscriber.
 
-To check angle from subscriber:
-	
+To check the joint value from publisher:
+
 	rosrun asimo_control control.py
 
-To check angle from publisher:
-	
-	rosrun asimo joint_state_subscriber.py
+To check the joint value from subscriber:
+
+	rosrun rostest joint_state_subscriber.py
 
 To run integration test: 
 	
 	rosrun rostest joint_integration_test.py
 
+
 ## Video 
 
-[![Watch the video]](https://www.youtube.com/watch?v=D0a5ea_kOAI)
+[![Watch the video]](https://www.youtube.com/watch?v=_ndAP1dwUtQ)
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/D0a5ea_kOAI/0.jpg)](https://www.youtube.com/watch?v=D0a5ea_kOAI)
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/_ndAP1dwUtQ/0.jpg)](https://www.youtube.com/watch?v=_ndAP1dwUtQ)
 
 Created with ROS melodic 
