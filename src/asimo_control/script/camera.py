@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+
 #This code is modified from : #https://gist.github.com/rethink-imcmahon/77a1a4d5506258f3dc1f
 
 # rospy for the subscriber
@@ -20,7 +23,7 @@ def image_callback(msg):
     try:
         # Convert your ROS Image message to OpenCV2
         cv2_img = bridge.imgmsg_to_cv2(msg, "bgr8")
-    except CvBridgeError, e:
+    except CvBridgeError as e:
         print(e)
     else:
         # Save your OpenCV2 image as a jpeg 

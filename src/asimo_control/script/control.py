@@ -16,7 +16,7 @@ def talker():
     
     pub7 = rospy.Publisher('/Asimo_E1/joint8_position_controller/command', Float64, queue_size=10)
     pub8 = rospy.Publisher('/Asimo_E1/joint9_position_controller/command', Float64, queue_size=10)
-    
+   
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
      
@@ -34,9 +34,10 @@ def talker():
 
         pub7.publish(position2)
         pub8.publish(position2)
-
-
+        
         rate.sleep()
+
+    return pub5
 
 if __name__ == '__main__':
     try:
