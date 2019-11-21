@@ -10,4 +10,4 @@ install:
   - pip install -r requirements.txt
   - pip install .
 # command to run tests
-script: fk_test.py
+script: python src/rostest/src/fk_test.py
