@@ -29,7 +29,7 @@ def image_callback(msg):
         #print(t)
         # else:
         if int(t) <= 10:
-            cv2.imwrite('/home/yong_ros/example_ws/src/asimo_e1_description/Photos/camera_image'+t+'.jpeg', cv2_img)
+            cv2.imwrite('~/Pictures'+t+'.jpeg', cv2_img)
         else:
             pass
         
