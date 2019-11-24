@@ -1,11 +1,11 @@
 #! /usr/bin/env python
-import unittest
+import unittest2
 #import rostest
 import numpy as np
 from sympy import pi
 import fk
 
-class MyTestCase(unittest.TestCase):
+class MyTestCase(unittest2.TestCase):
 
     def test_fk(self):
         calculation1 = fk.fk_3link(pi/3,pi/3,pi/3)
@@ -23,4 +23,4 @@ class MyTestCase(unittest.TestCase):
 
 if __name__ == "__main__":
     #rostest.rosrun('mytest', 'test_code', MyTestCase)
-    unittest.main()
+    unittest2.main()

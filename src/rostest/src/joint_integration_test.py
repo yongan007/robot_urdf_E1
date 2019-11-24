@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-import unittest
+import unittest2
 #import rostest
 import rospy
 import time
@@ -21,7 +21,7 @@ def listener():
     rospy.Subscriber("/Asimo_E1/joint8_position_controller/state", JointControllerState, callback)
     #rospy.spin()
 
-class JointStateCase(unittest.TestCase):
+class JointStateCase(unittest2.TestCase):
 
     #test if joint is recieve correctly
     def test_joint(self):
@@ -35,4 +35,4 @@ class JointStateCase(unittest.TestCase):
 if __name__ == "__main__":
     #listener()
     #rostest.rosrun('mytest', 'test_code', JointStateCase)
-    unittest.main()
+    unittest2.main()
