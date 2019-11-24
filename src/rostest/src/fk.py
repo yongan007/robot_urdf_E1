@@ -42,11 +42,11 @@ def fk_3link(theta1,theta2,theta3):
 
     T0_3_value = N(T0_3.evalf(subs={q1: theta1, q2: theta2, q3: theta3}),2) #two digit output
     #print(T0_3 )
-    print('T0_3= \n    ',T0_3_value)
-    print("result:",np.array([T0_3_value]))
+    #print('T0_3= \n    ',T0_3_value)
+    #print("result:",np.array([T0_3_value]))
 
     #print("\nT_total Matrix : \n")
-    print("\n")
+    #print("\n")
 
     return np.array([T0_3_value])
 

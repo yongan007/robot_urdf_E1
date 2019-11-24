@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 import unittest
-import rostest
+#import rostest
 import rospy
 import time
 from std_msgs.msg import Float64
@@ -33,5 +33,6 @@ class JointStateCase(unittest.TestCase):
             assert joint_command != joint_value, "The joint_command is not equal to joint_value."
 
 if __name__ == "__main__":
-    listener()
-    rostest.rosrun('mytest', 'test_code', JointStateCase)
+    #listener()
+    #rostest.rosrun('mytest', 'test_code', JointStateCase)
+    unittest.main()

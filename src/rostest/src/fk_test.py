@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 import unittest
-import rostest
+#import rostest
 import numpy as np
 from sympy import pi
 import fk
@@ -22,4 +22,5 @@ class MyTestCase(unittest.TestCase):
         assert (cal2).all == 0, "The equation is incorrect."
 
 if __name__ == "__main__":
-    rostest.rosrun('mytest', 'test_code', MyTestCase)
+    #rostest.rosrun('mytest', 'test_code', MyTestCase)
+    unittest.main()

@@ -1,13 +1,19 @@
 language: python
 python:
-  - "2.7"
-  - "3.8"
-  # PyPy versions
-  - "pypy"   # currently Python 2.7.13, PyPy 7.1.1
-  - "pypy3"  # currently Python 3.6.1,  PyPy 7.1.1-beta0
-# command to install dependencies
-# install:
-  # - pip install -r requirements.txt
-  # - pip install .
-# command to run tests
-script: python src/rostest/src/fk_test.py
+  - "3.7"
+
+  
+cache: pip
+before_install:
+  - python --version
+  - pip install -U pip
+  - pip install -U pytest
+  - pip install codecov
+  - pip install unittest
+  - pip install numpy
+  - pip install sympy 
+
+
+script: 
+  -python src/rostest/src/fk_test.py
+  -python src/rostest/src/joint_integration_test.py
