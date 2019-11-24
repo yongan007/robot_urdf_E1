@@ -3,7 +3,9 @@
 [![Build Status](https://travis-ci.org/yongan007/robot_urdf_E1.svg?branch=travis_ci)](https://travis-ci.org/yongan007/robot_urdf_E1)
 
 
+##  [![welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://travis-ci.org/yongan007/robot_urdf_E1)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # unitest
 This unitest is for check about correctness of a forward kinematics script.
