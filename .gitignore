@@ -8,4 +8,4 @@ devel/
 .urdf1
 *.pyc
 
-__pycache__/
+src/rostest/src/__pycache__/
