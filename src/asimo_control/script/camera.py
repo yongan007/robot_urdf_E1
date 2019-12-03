@@ -1,7 +1,12 @@
-#!/usr/bin/env python
+#! /usr/bin/python
+# Copyright (c) 2015, Rethink Robotics, Inc.
 
+# Using this CvBridge Tutorial for converting
+# ROS images to OpenCV2 images
+# http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython
 
-#This code is modified from : #https://gist.github.com/rethink-imcmahon/77a1a4d5506258f3dc1f
+# Using this OpenCV2 tutorial for saving Images:
+# http://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_gui/py_image_display/py_image_display.html
 
 # rospy for the subscriber
 import rospy
@@ -23,7 +28,7 @@ def image_callback(msg):
     try:
         # Convert your ROS Image message to OpenCV2
         cv2_img = bridge.imgmsg_to_cv2(msg, "bgr8")
-    except CvBridgeError as e:
+    except CvBridgeError, e:
         print(e)
     else:
         # Save your OpenCV2 image as a jpeg 
