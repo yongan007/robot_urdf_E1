@@ -6,3 +6,4 @@ devel/
 .launch1
 .xacro1
 .urdf1
+*.pyc
