@@ -2,14 +2,14 @@
 <launch>
 
 	 <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <!-- <arg name="world_name" value="$(find asimo_e1_description)/launch/my_world.world"/> -->
+    <arg name="world_name" value="$(find asimo_e1_description)/launch/my_world.world"/>
 	</include>
 
   <!-- Robot model -->
         <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find asimo_e1_description)/urdf/robot_E1_v2.xacro'" />
 		
-
-	<!-- <node 
+<!-- 
+	<node 
 			name="spawn_robot" 
 			pkg="gazebo_ros" 
 			type="spawn_model" 
