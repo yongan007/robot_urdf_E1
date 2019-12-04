@@ -18,6 +18,9 @@ To launch robot in Gazebo:
 
 [![Watch the video]](https://www.youtube.com/watch?v=D0a5ea_kOAI)
 
+
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/D0a5ea_kOAI/0.jpg)](https://www.youtube.com/watch?v=D0a5ea_kOAI)
 
-Created with ROS melodic 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/IKFGcrc6w74/0.jpg)](http://www.youtube.com/watch?v=IKFGcrc6w74)
+
+
