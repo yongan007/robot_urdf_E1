@@ -40,7 +40,7 @@ class intTest(unittest.TestCase):
 		#publisher and subscrier inizialization
 		pub = []
 		sub = []
-		for i in range(1,7):
+		for i in range(1,10):
 			pub.append(rospy.Publisher(self.inizializer(i, 'command'), Float64, queue_size = 10))
 			sub.append(rospy.Subscriber(self.inizializer(i, 'state'), JointControllerState, self.checkpos))
 
