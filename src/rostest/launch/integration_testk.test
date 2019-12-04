@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <test test-name="test_code" pkg="rostest" type="joint_integration_test.py" />
+</launch>
