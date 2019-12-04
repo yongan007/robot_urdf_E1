@@ -38,7 +38,7 @@
 
 
 <node name="talker" pkg="asimo_control" type="control.py" />
-<node name="image_listener" pkg="asimo_control" type="camera.py"/>
+<!-- <node name="image_listener" pkg="asimo_control" type="camera.py"/> -->
 <!-- <node name="camera_image_saver" pkg="asimo_control" type="camera1.py"/> -->
 
 
