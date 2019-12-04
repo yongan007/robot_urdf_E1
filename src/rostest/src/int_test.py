@@ -34,7 +34,11 @@ class intTest(unittest.TestCase):
 		rospy.init_node('pusher', anonymous=True)
 
 		#desired position
+<<<<<<< HEAD
 		q_des = [0.0, 0.0, -np.pi/3, np.pi, np.pi/4, -np.pi/3, np.pi, np.pi, np.pi]
+=======
+		q_des = [np.pi/2, 0.2, -np.pi/3, np.pi, np.pi/4, -np.pi/3, np.pi, np.pi, np.pi]
+>>>>>>> master
 
 
 		#publisher and subscrier inizialization

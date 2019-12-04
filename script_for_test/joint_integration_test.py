@@ -6,8 +6,6 @@ import time
 from std_msgs.msg import Float64
 from control_msgs.msg import JointControllerState
 
-
-
 def callback(data):
     #rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.process_value)
     rate = rospy.Rate(10) # 10hz
