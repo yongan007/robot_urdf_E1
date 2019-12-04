@@ -15,16 +15,17 @@ import numpy as np
 
 class intTest(unittest.TestCase):
 	
-	def move_joint(self, pub, jvq):
+	def move_joint(self, pub, Join_value):
 		for i in range (0,9):
-			pub[i].publish(jvq[i])
+			pub[i].publish(Join_value[i])
 	
 	def inizializer(self, j_num, string):
 		name ='/Asimo_E1/joint' + str(j_num) + '_position_controller/' + str(string)
 		return name
 	#Callback functions
 	def checkpos(self, msg):
-		self.assertAlmostEqual(msg.set_point, msg.process_value, delta = 0.01, msg = "joint failed test")
+		#print("set point is :", msg.set_point)
+		self.assertAlmostEqual(msg.set_point, msg.process_value, delta = 0.1, msg = "joint failed test")
 			
 
 
@@ -33,13 +34,15 @@ class intTest(unittest.TestCase):
 		#node
 		rospy.init_node('pusher', anonymous=True)
 
-		#desired position
-		q_des = [np.pi/2, 0.2, -np.pi/3, np.pi, np.pi/4, -np.pi/3, np.pi, np.pi, np.pi]
+		#desired position  
+		# joint_pub = [np.pi/2, 0.2, -np.pi/3, np.pi, np.pi/4, -np.pi/3, np.pi, np.pi, np.pi]
+		joint_pub = [0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0, 0.0,0.0]
 
 
 		#publisher and subscrier inizialization
 		pub = []
 		sub = []
+
 		for i in range(1,10):
 			pub.append(rospy.Publisher(self.inizializer(i, 'command'), Float64, queue_size = 10))
 			sub.append(rospy.Subscriber(self.inizializer(i, 'state'), JointControllerState, self.checkpos))
@@ -51,7 +54,7 @@ class intTest(unittest.TestCase):
 		time = 200
 		for t in range (time):
 			try: 
-				self.move_joint(pub, q_des)	
+				self.move_joint(pub, joint_pub)	
 			except rospy.ROSInterruptException:
 				pass
 			rate.sleep()
